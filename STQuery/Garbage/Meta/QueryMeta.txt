@@ -1,0 +1,27 @@
+﻿
+	O META o no unused namespace(s)
+
+	O TYPE o no unused namespace(s)
+
+	O LINK o no unused namespace(s)
+
+sequence Query
+
+	>Compress
+	<<QueryCompress.cs
+
+	>CompressRaw
+	<<QueryCompressRaw.cs
+
+	>Prototype
+	<<QueryPrototype.cs
+
+	<Query.cs
+
+	/object\OBJECT/QueryObject.cs
+
+	/object\OBJECT/QueryReadOnlyObject.cs
+
+	/read-only\READ-ONLY/QueryReadOnly.cs
+
+end sequence

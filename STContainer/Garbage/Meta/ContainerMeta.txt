@@ -1,0 +1,28 @@
+﻿
+	O META o no unused namespace(s)
+
+	O TYPE o no unsued namespace(s)
+
+	o LINK o no unused namespace(s)
+
+sequence Container
+
+	>Compress
+	<<ContainerCompress.cs
+
+	>CompressRaw
+	<<ContainerCompressRaw.cs
+
+	>CompressedSolid
+	<<ContainerCompressedSolid
+
+	>Object
+	>>ContainerObject
+	<<<ContainerObject.cs
+
+	>Prototype
+	<<ContainerPrototype.cs
+
+	<Container.cs
+
+end sequence

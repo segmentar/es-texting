@@ -1,0 +1,29 @@
+﻿
+	O META o no unused namespace(s)
+
+	O TYPE o no unused namespace(s)
+
+	O LINK o no unused namespace(s)
+
+sequence Search
+
+	>Compress
+	<<SearchCompress.cs
+
+	>CompressRaw
+	<<SearchCompressRaw.cs
+
+	>Prototype
+	<<SearchPrototype.cs
+
+	<Search.cs
+
+	/object\OBJECT/SearchObject.cs\
+
+	/object\OBJECT/SearchComplexObject.cs\
+
+	/object\OBJECT/SearchReadOnlyObject.cs\
+
+	/read-only\READ-ONLY/SearchReadOnly.cs\
+
+end sequence

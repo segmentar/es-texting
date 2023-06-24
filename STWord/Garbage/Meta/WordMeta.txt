@@ -1,0 +1,29 @@
+﻿
+	O META o no unused namespace(s)
+
+	O DEBUG o no unused namespace(s)
+
+	O INFO o no unused namespace(s)
+
+	O TYPE o no unused namespace(s)
+
+	o LINK o no unsued namespace(s)
+
+begin sequnce STWord
+
+	>Compressed
+	<<WordCompressed.cs
+
+	>CompressedRaw
+	<<WordCompressedRaw.cs
+
+	>Object
+	>>WordObject
+	<<<WordObject.cs
+
+	>Prototype
+	<<WordPrototype.cs
+
+	<Word.cs
+
+end sequence
