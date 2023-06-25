@@ -10,15 +10,17 @@ namespace Core.Shared
         {
             STWord wordResult = default;
 
-            var search = STSearch.MakeSearchForwardIndexerIndexer(SAConstantVoid.SearchSizeDefault, text.Value.Length, indexer_START, indexer_END, SAConstantDisagreement.SearchNextDefault, debug);
+            var volume = text.Value.Length;
 
-            var start = search.Index;
+            var search = STSearch.MakeSearchForwardIndexerIndexer(SAConstantVoid.SearchSizeDefault, volume, indexer_START, indexer_END, SAConstantDisagreement.SearchNextDefault, debug);
 
-            var length = search.Count;
+            var immutable = STSearchReadOnly.MakeSearchReadOnlyNew(search);
 
-            Info_WordReverseIndexerIndexer(search, start, length, debug);
+            ArrayList.Add(immutable);
 
-            wordResult = MakeWordReverseIndexCount(text, indexer_START, indexer_END, debug);
+            var word = new STWordReverse(text, immutable.Index, immutable.Count, debug).Word;
+
+            wordResult = word;
 
             return wordResult;
         }

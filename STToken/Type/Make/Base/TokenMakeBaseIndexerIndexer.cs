@@ -10,28 +10,23 @@ namespace Core.Shared
         {
             STToken tokenResult = default;
 
-            Debug_TokenBaseIndexerIndexer(symbol, rebase, indexer_START, indexer_END, backward, skip, next, text, debug);
+            var immutable = new STTokenSequenceIndexerIndexer(symbol, indexer_START, indexer_END, backward, skip, next, text, debug).Immutable;
 
-            STQuery sQuery;
-            
-            if (backward)
+            ArrayList.Add(immutable);
+
+            var position = (immutable.Value + rebase);
+
+            var safe_match__ZERO_TEN_value = (immutable.Value == -1) is true;
+
+            if (safe_match__ZERO_TEN_value)
             {
-                sQuery = STQuery.MakeQueryBackwardIndexerIndexer(symbol, indexer_START, indexer_END, skip, next, text, debug);
+                tokenResult = new STToken(symbol, position, immutable.Quantity, SAConstantDisagreement.TokenNotFoundDefault, debug);
             }
             else
             {
-                sQuery = STQuery.MakeQueryForwardIndexerIndexer(symbol, indexer_START, indexer_END, skip, next, text, debug);
+                tokenResult = new STToken(symbol, position, immutable.Quantity, SAConstantAgreement.TokenFoundDefault, debug);
             }
 
-            if (sQuery.Value == -1)
-            {
-                tokenResult = new STToken(symbol, (sQuery.Value + rebase), sQuery.Quantity, false, debug);
-            }
-            else
-            {
-                tokenResult = new STToken(symbol, (sQuery.Value + rebase), sQuery.Quantity, true, debug);
-            }
-                
             return tokenResult;
         }
     }

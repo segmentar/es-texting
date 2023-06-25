@@ -13,10 +13,12 @@ sequence Immediate
 	>CompressRaw
 	<<ImmediateCompressRaw.cs
 
-	>Object
-	>>ImmediateObject
-	<<<ImmediateObject.cs
-
 	<Immediate.cs
+
+	/object\OBJECT/ImmediateObject.cs\
+
+	/object\OBJECT/ImmediateReadOnlyObject.cs\
+
+	/read-only\READ-ONLY/ImmediateReadOnly.cs\
 
 end sequence

@@ -8,9 +8,9 @@ namespace Core.Shared
     {
         public static STQueryReadOnly MakeQueryReadOnlyNew(STQuery query)
         {
-            STQueryReadOnly queryResult = default;
+            STQueryReadOnly immutableResult = default;
 
-            queryResult = new STQueryReadOnly(
+            immutableResult = new STQueryReadOnly(
                 value: query.Value,
                 quantity: query.Quantity,
                 skip: query.Skip,
@@ -18,7 +18,7 @@ namespace Core.Shared
                 isDebug: query.IsDebug
                 );
 
-            return queryResult;
+            return immutableResult;
         }
     }
 }

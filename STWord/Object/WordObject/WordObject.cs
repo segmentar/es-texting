@@ -10,11 +10,11 @@ namespace Core.Shared
         {
             return String.Join('\n'.ToString(), new String[] {
                 String.Empty + nameof(STWord) + ' ' + "::" + ' ' + '{',
-                String.Empty + '.' + "compressed",
+                String.Empty + '.' + "compress",
                 String.Empty + '\t' + '~' + "01" + ' ' + nameof(IsDebug) + ':' + ' ' + IsDebug,
-                String.Empty + '.' + "compressed-raw",
-                String.Empty + '\t' + '~' + "02" + ' ' + nameof(Before) + ':' + ' ' + $"[{Before}]",
-                String.Empty + '\t' + '~' + "03" + ' ' + nameof(After) + ':' + ' ' + $"[{After}]",
+                String.Empty + '.' + "compress-raw",
+                String.Empty + '\t' + '~' + "02" + ' ' + nameof(WordBefore) + ':' + ' ' + $"[{WordBefore}]",
+                String.Empty + '\t' + '~' + "03" + ' ' + nameof(WordAfter) + ':' + ' ' + $"[{WordAfter}]",
                 String.Empty + '}'
             });
         }

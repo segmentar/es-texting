@@ -4,9 +4,6 @@ namespace Core.Shared
 {
     using System;
 
-    using System.Collections;
-    using System.Collections.Generic;
-
     public partial class STWord
     {
         public static STWord Runtime_MakeWordInsertPrimarySecondary(SGSymbol symbol, Int32 primary, Int32 secondary, SGText text)

@@ -13,9 +13,6 @@ sequence Container
 	>CompressRaw
 	<<ContainerCompressRaw.cs
 
-	>CompressedSolid
-	<<ContainerCompressedSolid
-
 	>Object
 	>>ContainerObject
 	<<<ContainerObject.cs

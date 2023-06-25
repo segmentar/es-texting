@@ -4,9 +4,6 @@ namespace Core.Shared
 {
     using System;
 
-    using System.Collections;
-    using System.Collections.Generic;
-
     public partial class STWord
     {
         public static STWord Runtime_MakeWordInsertIndexerIndexer(SGSymbol symbol, Int32 indexer_START, Int32 indexer_END, SGText text)

@@ -10,21 +10,13 @@ namespace Core.Shared
         {
             STQuery queryResult = default;
 
-            var start_index_INCLUSIVE_NULLABLE_INDEXER__NUMBER_INTEGER_BIT_32__ = index;
-
-            var count_counter_EXCLUSIVE_NORMALIZED_ORDINAL__NUMBER_INTEGER_BIT_32__ = count;
-
-            var start = start_index_INCLUSIVE_NULLABLE_INDEXER__NUMBER_INTEGER_BIT_32__;
-
-            var length = count_counter_EXCLUSIVE_NORMALIZED_ORDINAL__NUMBER_INTEGER_BIT_32__;
-
             char[] data = text.Value.ToCharArray();
 
             int i, j, n, m, x, o, k, l, ijnmxokl = -1;
 
-            i = start;
+            i = index;
 
-            n = length;
+            n = count;
 
             m = symbol.Value.Length;
 
@@ -36,7 +28,7 @@ namespace Core.Shared
 
             var quantity = 1;
 
-            var found = false;
+            var match_ZERO__TEN_found_strong = false;
 
             for (; ; )
             {
@@ -61,16 +53,9 @@ namespace Core.Shared
 
                 var match_ONE__FIRST = (ci == ic) is true;
 
-                if (safe_ONE__FIRST is true)
-                {
-                    break;
-                }
-                else
-                    "false".ToString();
-
                 if (match_ONE__FIRST is true)
                 {
-                    found = true;
+                    match_ZERO__TEN_found_strong = true;
 
                     for (j = i; ;)
                     {
@@ -90,11 +75,11 @@ namespace Core.Shared
                         {
                             if (o == m)
                             {
-                                found = true;
+                                match_ZERO__TEN_found_strong = true;
                             }
                             else
                             {
-                                found = false;
+                                match_ZERO__TEN_found_strong = false;
                             }
 
                             break;
@@ -106,11 +91,11 @@ namespace Core.Shared
 
                         jc = symbol.Value[l];
 
-                        var match_TWO__SECOND = (cj == jc) is false;
+                        var safe_THREE__THIRD = (cj == jc) is false;
 
-                        if (match_TWO__SECOND is true)
+                        if (safe_THREE__THIRD is true)
                         {
-                            found = false;
+                            match_ZERO__TEN_found_strong = false;
 
                             break;
                         }
@@ -125,13 +110,25 @@ namespace Core.Shared
                 else
                     "false".ToString();
 
-                if (found && skip is false)
+                var match_ZERO__TEN_found_break = true;
+
+                match_ZERO__TEN_found_break = match_ZERO__TEN_found_break && skip is false;
+
+                match_ZERO__TEN_found_break = match_ZERO__TEN_found_break && match_ZERO__TEN_found_strong is true;
+
+                var match_ZERO__TEN_found_continue = true;
+
+                match_ZERO__TEN_found_continue = match_ZERO__TEN_found_continue && skip is true;
+
+                match_ZERO__TEN_found_continue = match_ZERO__TEN_found_continue && match_ZERO__TEN_found_strong is true;
+
+                if (match_ZERO__TEN_found_break is true)
                 {
                     break;
                 }
-                else if (found && skip is true)
+                else if (match_ZERO__TEN_found_continue is true)
                 {
-                    found = false;
+                    match_ZERO__TEN_found_strong = false;
 
                     queryResult = new STQuery(ijnmxokl, quantity, skip, next, debug);
 
@@ -143,11 +140,13 @@ namespace Core.Shared
                 continue;
             }
 
-            if (found)
+            var match_ZERO__TEN_found_weak = (queryResult == default) is false;
+
+            if (match_ZERO__TEN_found_strong)
             {
                 queryResult = new STQuery(ijnmxokl, quantity, skip, next, debug);
             }
-            else if ((queryResult == default) is false)
+            else if (match_ZERO__TEN_found_weak is true)
             {
                 return queryResult;
             }

@@ -6,6 +6,8 @@ namespace Core.Shared
 
     public partial class SAConstantAgreement
     {
+        public const Boolean TokenFoundDefault = SAConstant.GeneralAgreement;
+
         public const Boolean TokenBackwardDefault = SAConstant.GeneralAgreement;
     }
 }

@@ -14,13 +14,17 @@ namespace Core.Shared
 
             ArrayList.Add(immutable);
 
-            if ((immutable.Value == -1) is true)
+            var position = (immutable.Value + rebase);
+
+            var safe_match__ZERO_TEN_value = (immutable.Value == -1) is true;
+
+            if (safe_match__ZERO_TEN_value)
             {
-                tokenResult = new STToken(symbol, (immutable.Value + rebase), immutable.Quantity, false, debug);
+                tokenResult = new STToken(symbol, position, immutable.Quantity, SAConstantDisagreement.TokenNotFoundDefault, debug);
             }
             else
             {
-                tokenResult = new STToken(symbol, (immutable.Value + rebase), immutable.Quantity, true, debug);
+                tokenResult = new STToken(symbol, position, immutable.Quantity, SAConstantAgreement.TokenFoundDefault, debug);
             }
                 
             return tokenResult;

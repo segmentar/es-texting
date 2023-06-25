@@ -104,11 +104,23 @@ namespace Core.Shared
                 else
                     "false".ToString();
 
-                if (match_ZERO__TEN_found_strong && skip is false)
+                var match_ZERO__TEN_found_break = true;
+
+                match_ZERO__TEN_found_break = match_ZERO__TEN_found_break && skip is false;
+
+                match_ZERO__TEN_found_break = match_ZERO__TEN_found_break && match_ZERO__TEN_found_strong is true;
+
+                var match_ZERO__TEN_found_continue = true;
+
+                match_ZERO__TEN_found_continue = match_ZERO__TEN_found_continue && skip is true;
+
+                match_ZERO__TEN_found_continue = match_ZERO__TEN_found_continue && match_ZERO__TEN_found_strong is true;
+
+                if (match_ZERO__TEN_found_break is true)
                 {
                     break;
                 }
-                else if (match_ZERO__TEN_found_strong && skip is true)
+                else if (match_ZERO__TEN_found_continue is true)
                 {
                     match_ZERO__TEN_found_strong = false;
 

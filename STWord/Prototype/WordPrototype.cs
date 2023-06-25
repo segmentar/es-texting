@@ -6,11 +6,11 @@ namespace Core.Shared
 
     public partial class STWord
     {
-        public STWord(String symbol_BEFORE, String symbol_AFTER, Boolean debug)
+        public STWord(String wordBefore, String wordAfter, Boolean debug)
         {
-            this.Before = symbol_BEFORE;
+            this.WordBefore = wordBefore;
 
-            this.After = symbol_AFTER;
+            this.WordAfter = wordAfter;
 
             if (debug is true)
             {
@@ -21,12 +21,7 @@ namespace Core.Shared
 
             if (SAPolicy.WordInfoPolicy is true)
             {
-                foreach (Object item in ArrayList)
-                {
-                    Console.Out.WriteLine(item);
-
-                    continue;
-                }
+                SLLogger.Runtime_LoggerDefaultSet(ArrayList.ToArray());
             }
             else
                 "false".ToString();

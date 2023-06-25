@@ -15,7 +15,9 @@ namespace Core.Shared
         {
             STContainer containerResult = default;
 
-            containerResult = new STContainer(enumerable, debug);
+            var list = new List<STToken>(enumerable);
+
+            containerResult = new STContainer(list, debug);
 
             return containerResult;
         }

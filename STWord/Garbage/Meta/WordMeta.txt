@@ -1,29 +1,27 @@
 ﻿
 	O META o no unused namespace(s)
 
-	O DEBUG o no unused namespace(s)
-
-	O INFO o no unused namespace(s)
-
 	O TYPE o no unused namespace(s)
 
-	o LINK o no unsued namespace(s)
+	O LINK o no unsued namespace(s)
 
-begin sequnce STWord
+sequnce Word
 
-	>Compressed
-	<<WordCompressed.cs
+	>Compress
+	<<WordCompress.cs
 
-	>CompressedRaw
-	<<WordCompressedRaw.cs
-
-	>Object
-	>>WordObject
-	<<<WordObject.cs
+	>CompressRaw
+	<<WordCompressRaw.cs
 
 	>Prototype
 	<<WordPrototype.cs
 
 	<Word.cs
+
+	/object\OBJECT/WordObject.cs\
+
+	/object\OBJECT/WordReadOnlyObject.cs\
+
+	/read-only\READ-ONLY/WordReadOnly.cs\
 
 end sequence

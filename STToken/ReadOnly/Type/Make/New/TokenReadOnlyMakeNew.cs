@@ -8,9 +8,9 @@ namespace Core.Shared
     {
         public static STTokenReadOnly MakeTokenReadOnlyNew(STToken token)
         {
-            STTokenReadOnly tokenResult = default;
+            STTokenReadOnly immutableResult = default;
 
-            tokenResult = new STTokenReadOnly(
+            immutableResult = new STTokenReadOnly(
                 symbol: token.Symbol,
                 position: token.Position,
                 quantity: token.Quantity,
@@ -18,7 +18,7 @@ namespace Core.Shared
                 isDebug: token.IsDebug
                 );
 
-            return tokenResult;
+            return immutableResult;
         }
     }
 }

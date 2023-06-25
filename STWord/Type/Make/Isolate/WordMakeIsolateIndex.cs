@@ -10,15 +10,17 @@ namespace Core.Shared
         {
             STWord wordResult = default;
 
-            var search = STSearch.MakeSearchForwardIndex(SAConstantVoid.SearchSizeDefault, text.Value.Length, index, SAConstantDisagreement.SearchNextDefault, debug);
+            var volume = text.Value.Length;
 
-            var start = search.Index;
+            var search = STSearch.MakeSearchForwardIndex(SAConstantVoid.SearchSizeDefault, volume, index, SAConstantDisagreement.SearchNextDefault, debug);
 
-            var length = search.Count;
+            var immutable = STSearchReadOnly.MakeSearchReadOnlyNew(search);
 
-            Info_WordIsolateIndex(search, start, length, debug);
+            ArrayList.Add(immutable);
 
-            wordResult = MakeWordIsolateIndexCount(text, start, length, debug);
+            var word = new STWordIsolate(text, immutable.Index, immutable.Count, debug).Word;
+
+            wordResult = word;
 
             return wordResult;
         }

@@ -4,24 +4,23 @@ namespace Core.Shared
 {
     using System;
 
-    using System.Collections;
-    using System.Collections.Generic;
-
     public partial class STWord
     {
         public static STWord MakeWordInsertIndexCount(SGSymbol symbol, Int32 index, Int32 count, SGText text, Boolean debug)
         {
             STWord wordResult = default;
 
-            var search = STSearch.MakeSearchForwardIndexCount(SAConstantVoid.SearchSizeDefault, text.Value.Length, index, count, SAConstantDisagreement.SearchNextDefault, debug);
+            var volume = text.Value.Length;
 
-            var start = search.Index;
+            var search = STSearch.MakeSearchForwardIndexCount(SAConstantVoid.SearchSizeDefault, volume, index, count, SAConstantDisagreement.SearchNextDefault, debug);
 
-            var length = search.Count;
+            var immutable = STSearchReadOnly.MakeSearchReadOnlyNew(search);
 
-            Info_WordInsertIndexCount(search, start, length, debug);
+            ArrayList.Add(immutable);
 
-            wordResult = MakeWordInsertBase(symbol, start, length, text, debug);
+            var word = new STWordInsert(symbol, immutable.Index, immutable.Count, text, debug).Word;
+
+            wordResult = word;
 
             return wordResult;
         }

@@ -24,7 +24,7 @@ namespace Core.Shared
 
             do
             {
-                var token = STToken.Runtime_MakeTokenNext(symbol, rebase, move, backward, text);
+                var token = STToken.Runtime_MakeTokenNextDefault(symbol, rebase, move, backward, text);
 
                 if (token.Found is false)
                 {

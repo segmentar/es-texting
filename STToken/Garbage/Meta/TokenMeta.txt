@@ -22,4 +22,6 @@ sequence Token
 
 	/object\OBJECT/TokenReadOnlyObject.cs\
 
+	/read-only\READ-ONLY/TokenReadOnly.cs\
+
 end sequence

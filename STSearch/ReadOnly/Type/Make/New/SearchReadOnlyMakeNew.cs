@@ -8,9 +8,9 @@ namespace Core.Shared
     {
         public static STSearchReadOnly MakeSearchReadOnlyNew(STSearch search)
         {
-            STSearchReadOnly searchResult = default;
+            STSearchReadOnly immutableResult = default;
 
-            searchResult = new STSearchReadOnly(
+            immutableResult = new STSearchReadOnly(
                 size: search.Size,
                 volume: search.Volume,
                 index: search.Index,
@@ -19,7 +19,7 @@ namespace Core.Shared
                 isDebug: search.IsDebug
                 );
 
-            return searchResult;
+            return immutableResult;
         }
     }
 }

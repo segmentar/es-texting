@@ -11,11 +11,9 @@ namespace Core.Shared
 
     public partial class STContainer
     {
-        public STContainer(IEnumerable<STToken> enumerable, Boolean debug)
+        public STContainer(List<STToken> tokenList, Boolean debug)
         {
-            var list = new List<STToken>(enumerable);
-
-            this.TokenList = list;
+            this.TokenList = tokenList;
 
             if (debug is true)
             {

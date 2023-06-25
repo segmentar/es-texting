@@ -21,7 +21,7 @@ namespace Core.Shared
             
             foreach (SGSymbol symbol in delimiter.DelimiterList)
             {
-                var token = STToken.MakeTokenValue(symbol, rebase, backward, text, debug);
+                var token = STToken.MakeTokenValueDefault(symbol, rebase, backward, text, debug);
 
                 if (token.Found is false)
                 {
