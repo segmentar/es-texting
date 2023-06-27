@@ -12,5 +12,7 @@ namespace Core.Shared
     public partial class STContainer
     {
         public List<STToken> TokenList;
+
+        public List<STTokenReadOnly> TokenImmutableList;
     }
 }

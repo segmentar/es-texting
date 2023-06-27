@@ -3,7 +3,7 @@
 
 	O TYPE o no unsued namespace(s)
 
-	o LINK o no unused namespace(s)
+	O LINK o no unused namespace(s)
 
 sequence Container
 
@@ -13,13 +13,13 @@ sequence Container
 	>CompressRaw
 	<<ContainerCompressRaw.cs
 
-	>Object
-	>>ContainerObject
-	<<<ContainerObject.cs
-
 	>Prototype
 	<<ContainerPrototype.cs
 
 	<Container.cs
+
+	/object\OBJECT/ContainerObject.cs
+
+	/object\OBJECT/ContainerReadOnlyObject.cs
 
 end sequence

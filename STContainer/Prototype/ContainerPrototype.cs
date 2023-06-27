@@ -11,9 +11,11 @@ namespace Core.Shared
 
     public partial class STContainer
     {
-        public STContainer(List<STToken> tokenList, Boolean debug)
+        public STContainer(List<STToken> tokenList, List<STTokenReadOnly> tokenImmutableList, Boolean debug)
         {
             this.TokenList = tokenList;
+
+            this.TokenImmutableList = tokenImmutableList;
 
             if (debug is true)
             {
